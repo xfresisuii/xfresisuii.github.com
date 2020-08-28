@@ -74,7 +74,7 @@ mysqli_close($link);
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>OTAFRES</title>
+  <title>FRESISTORE</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -112,7 +112,7 @@ mysqli_close($link);
 
               <input type="text" name="email">
                    <input type="submit" name="submit">;
-                  
+
 
               </form>
 

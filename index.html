@@ -1,7 +1,4 @@
-<?php
-session_start();
-?>
-<!doctype html>
+
 <html>
 
 <head>
@@ -10,7 +7,7 @@ session_start();
     <source src="mp4/oya.mp4" type="video/mp4">
   </video>
 
-  <form action="hola.php" method="post">
+  <form action="index2.php" method="post">
 
 
   <input type="text" name="email">
@@ -20,54 +17,6 @@ session_start();
 
   </form>
 
-<?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "tienda";
-
-  $conn = new mysqli($servername, $username, $password, $dbname);
-
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
-
-
-
-  $conn->close();
-  ?>
-<?php
-
-if(isset ($_POST["submit"])){
-  $_SESSION["email"][] = $_REQUEST["email"];
-    foreach ($_SESSION["email"] as $email){
-  }
-
-
-
-
-$link = mysqli_connect("localhost", "root", "", "tienda");
-
-
-if($link === false){
-    die("la taula examenformbd no existeix");
-}
-
-
-
-$sql = "INSERT INTO usuarios (email) VALUES ('$email')";
-if(mysqli_query($link, $sql)){
-    echo "S'ha registrat correctament el llibre(isbn,titol,categoria,preu,editorial,autor)";
-} else{
-    echo "No es pot executar $sql. " . mysqli_error($link);
-}
-
-
-
-// Close connection
-mysqli_close($link);
-}
-?>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -107,7 +56,7 @@ mysqli_close($link);
             <p class="mb-5">Estamos trabajando para abrir lo antes posible, en
               <strong>Septiembre</strong> pon tu correo para recibir un aviso con descuentos!</p>
             <div class="input-group input-group-newsletter">
-              <form action="index.php" method="post">
+              <form action="index2.php" method="post">
 
 
               <input type="text" name="email">
