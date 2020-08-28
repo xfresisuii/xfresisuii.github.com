@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+?>
+<!doctype html>
 <html>
 
 <head>
@@ -7,7 +10,11 @@
     <source src="mp4/oya.mp4" type="video/mp4">
   </video>
 
-  <form action="index2.php" method="post">
+  <form action="index2.php" method="get">
+
+      First name: <input type="text" name="fname"><br>
+      Last name: <input type="text" name="lname"><br>
+      <input type="submit" value="Submit">
 
 
   <input type="text" name="email">
@@ -15,15 +22,63 @@
        <input type="submit" name="borrar" value="borrar">;
        <input type="submit" name="passar" value="passar">;
 
-  </form>
+      </form>
 
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tienda";
+
+  $conn = new mysqli($servername, $username, $password, $dbname);
+
+  if ($conn->connect_error) {
+      die("Connection failed: " . $conn->connect_error);
+  }
+
+
+
+  $conn->close();
+  ?>
+<?php
+
+if(isset ($_POST["submit"])){
+  $_SESSION["email"][] = $_REQUEST["email"];
+    foreach ($_SESSION["email"] as $email){
+  }
+
+
+
+
+$link = mysqli_connect("localhost", "root", "", "tienda");
+
+
+if($link === false){
+    die("la taula examenformbd no existeix");
+}
+
+
+
+$sql = "INSERT INTO usuarios (email) VALUES ('$email')";
+if(mysqli_query($link, $sql)){
+    echo "S'ha registrat correctament el llibre(isbn,titol,categoria,preu,editorial,autor)";
+} else{
+    echo "No es pot executar $sql. " . mysqli_error($link);
+}
+
+
+
+// Close connection
+mysqli_close($link);
+}
+?>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>FRESISTORE</title>
+  <title>FRESIS</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
