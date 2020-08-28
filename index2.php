@@ -10,7 +10,7 @@ session_start();
     <source src="mp4/oya.mp4" type="video/mp4">
   </video>
 
-  <form action="hola.php" method="post">
+  <form action="index2.php" method="post">
 
 
   <input type="text" name="email">
@@ -107,7 +107,7 @@ mysqli_close($link);
             <p class="mb-5">Estamos trabajando para abrir lo antes posible, en
               <strong>Septiembre</strong> pon tu correo para recibir un aviso con descuentos!</p>
             <div class="input-group input-group-newsletter">
-              <form action="index.php" method="post">
+              <form action="index2.php" method="post">
 
 
               <input type="text" name="email">
