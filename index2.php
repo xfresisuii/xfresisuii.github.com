@@ -1,6 +1,6 @@
-
+<?php
 session_start();
-
+?>
 <!doctype html>
 <html>
 
@@ -20,6 +20,7 @@ session_start();
 
   </form>
 
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -35,7 +36,7 @@ $dbname = "tienda";
 
   $conn->close();
   ?>
-
+<?php
 
 if(isset ($_POST["submit"])){
   $_SESSION["email"][] = $_REQUEST["email"];
